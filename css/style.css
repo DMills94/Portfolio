@@ -10,10 +10,14 @@ body {
     font-size: 15px;
     line-height: 1.52;
     color: #717f86;
-    font-size: 16px;
+    font-size: 1vw;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    overflow-x: hidden; 
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 ol, ul {
@@ -41,13 +45,22 @@ section {
 
 .header-h {
     color: #FFB03B;
-    font-size: 46px;
-    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 4vw;
+    font-family: 'Handlee', sans-serif;
     font-weight: 300;
+    text-decoration: underline;
 }
+
 .header-p {
     color: #9699a6;
-    font-size: 16px;
+    font-size: 1.5vw;
+}
+
+h2{
+    color: #FFB03B;
+    font-size: 34px;
+    font-family: 'Handlee', sans-serif;
+    font-weight: 300;
 }
 
 strong{
@@ -61,32 +74,35 @@ GENERAL CSS END
 /*------------------------
 BACKGROUND IMAGE/VIDEO
 -------------------------*/
-.homepage {
+#homepage {
     width:100%;
     height:100vh;
     overflow: hidden;
 }
 
-.homepage video {
-    /*object-fit: contain;*/
-    /*       object-fit: fill; */
+#homepage div{
+    float: left;
+}
+
+#homepage video {
     object-fit: cover;
     width:100%;
     height:100%;
     z-index: -1;
 }
 
-#homepage-text {
+.homepage-text {
     margin: 0;
     position: absolute;
     z-index: 2;
-    top:40%;
+    top: 40%;
     transform:translateY(-50%);
     width: 100%;
     text-align: center;
-
-    animation-duration: 3s;
+    color: white;
+    animation-duration: 1.5s;
 }
+
 
 /*---------------------------
 BACKGROUND IMAGE/VIDEO END
@@ -117,15 +133,25 @@ BANNER
     padding: 60px 0px;
 }
 
-.my-name{
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 65px;
+#my-name{
+    font-family: 'Handlee', cursive;
+    font-size: 8vw;
     margin-top: 140px;
     color: #FFB03B;
 }
 
-.homepage-text{
-    animation-delay: 1s;
+#my-description{
+    font-family: 'Ubuntu Mono', monospace;
+    color: white;
+    font-size: 2.5vw;
+}
+
+#my-animation{
+    font-family: 'Ubuntu Mono', monospace;
+    color: white;
+    animation-delay: 1.5s;
+    display: none;
+    font-size: 2.5vw;
 }
 
 /*--------------------------
@@ -188,7 +214,27 @@ NAVIGATION
 NAVIGATION END
 ---------------------------*/
 
+#wallpaper{
+    background: url('/img/about-bg2.png') -25px -50px;
+    position: relative;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 3;
+    background-size: calc(20%);
+}
 
+#chessboard{
+    background: url('/img/skillsbgblur.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    z-index: 4;
+}
 
 /*-------------------
 ABOUT SECTION
@@ -198,55 +244,144 @@ ABOUT SECTION
     margin-bottom: 35px;
 }
 
+#about{
+    margin:0;
+    min-height: 100vh;
+    font-family:"arial",heletica,sans-serif;
+    font-size:12px;
+}
 
-#about img
-{
-    border: 5px solid rgb(255, 176, 59);
-    border-radius: 2px;
+#about div.container{
+    width: 100vw;
+    margin: 0;
+}
+
+#about-picture{
+    display: flex;
+    width: 100%;
+    margin: auto;
 }
 
 #my-pic{
-    width: 200px;
-    height: 350px;
-    margin: auto;
-    margin-bottom: 20px;
+    width: 20vw;
+    height: 100%;
+    margin: 0 20px 40px 20px;
     display: block;
+    float: left;
+    border: 2px solid rgb(255, 176, 59);
+    border-radius: 10px;
 }
 
-.about-intro{
-    text-align: center;
+#picture-content{
+    font-size: 1.5vw;
+    width: 70vw;
+    padding: 2.5%;
+    margin-right: 20px;
+    background: rgba(255,255,255,0.6);
+    border: 2px solid #FFB03B;
+    border-radius: 10px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 
 #about-content{
+    width: 100%;
     display: inline-flex;
     flex-wrap: wrap;
-
 }
 
-.skills-content{
-    min-width: 20%;
-    max-width: 20%;
-    margin: 0 2.5%;
-    border: 1px solid #FFB03B;
+#myskills{
+    border-bottom: 0;
 }
 
-.skills-icons{
-    color: #FFB03B;
-    background: linear-gradient(black, grey);
-    width: 50%;
-    margin: 10px auto;
-    display: block;
-    height: auto;
-    padding: 20px;
-    font-size: 3em;
-    text-align: center;
+#myskills div{
+}
+
+/* Style the tab */
+div.skills-tab {
+    width: 100vw;
+    height: 40vh;
+    margin: 4% 2% 0 2%;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+/* Style the buttons inside the tab */
+div.skills-tab button {
+    font-size: 5vw;
+    width: 15%;
+    height: 25vh;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 4% 5%;
     border-radius: 50%;
     border: 1px solid #FFB03B;
+    background: rgba(255,255,255,0.8);
+    color: #FFB03B;
 }
 
-.skills-content p {
+/* Change background color of buttons on hover */
+div.skills-tab button:hover {
+    background: #FFB03B;
+    color: #fff;
+}
+
+/* Create an active/current tablink class */
+div.skills-tab button.active {
+    background: #FFB03B;
+    color: #fff;
+    border: 1px solid #FFB03B;
+}
+
+/* Style the tab content */
+.skills-content {
+    width: 80vw;
+    font-size: 1.3em;
+    display: none;
+    padding: 6px 12px;
+    border: 4px solid #FFB03B;
+    border-radius: 10px;
+    margin: 0 10vw 1% 10vw   ;
+    margin-bottom: 4%;
+    background: rgba(255,255,255,0.8);
+}
+
+.skills-content h1{
+    text-decoration: none;
     text-align: center;
 }
+
+.skills-content div{
+    width: 100%;
+}
+
+.skills-content {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 
 /*--------------------
 ABOUT SECTION ENDS
@@ -258,53 +393,83 @@ ABOUT SECTION ENDS
 EDUCATION
 ---------------------------*/
 
+#education{
+    min-height: 100vh;
+}
+
+
+#education div.container{
+    width: 100vw;
+    margin: 0;
+}
+
 /* ACCORDION CSS */
+button.accordion {
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    height: 10vh;
+    margin: 0 auto;
+    border: 1px solid #FFB03B;
+    background: rgba(255,255,255,0.9);
+    text-align: left;
+    outline: none;
+    font-size: 1.2vw;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
 button.accordion.active, button.accordion:hover {
     background: #FFB03B;
     color: #fff;
     border: 1px solid #FFB03B;
 }
 
-button.accordion {
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: 1px solid #BBBBBB;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    text-decoration: none;
-}
-
-
 div.panel {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2%;
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     border: 1px solid #FFB03B;
     border-radius: 0;
+    background: rgba(255,255,255,0.9);
+    font-size: 1.3vw;
+}
+
+#education .header-p{
+    color: #FFB03B;
 }
 
 #sfcf-logo{
-    padding: 0;
+    height: inherit;
+    width: 100%;
+    border: 1px solid #FFB03B;
 }
 
 #uob-logo{
-    padding-bottom: 35px;
+    height: inherit;
+    width: 100%;
+    border: 1px solid #FFB03B;
+    padding-bottom: 10px;
 }
 
 #justit-logo{
-    padding-bottom: 15px;
+    height: inherit;
+    width: 100%;
+    border: 1px solid #FFB03B;
 }
 
 .pic{
-    height: 100px;
-    width: 100px;
-
+    height: 15vh;
+    width: 12%;
+    margin: 1% auto;
+    background: white;
 }
+
 
 #education ul li{
     color: black;
@@ -317,9 +482,102 @@ div.panel {
 }
 
 
+
+/*--------------------
+PROJECT SECTION
+---------------------*/
+
+#Container .mix{
+    display: none;
+}
+
+.project-list{
+    width: 50%;
+    float: left;
+    padding: 15px;
+    position: relative;
+}
+
+.project-list .project-title {
+    float: left;
+    font-family: Montserrat,arial;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFB03B;
+}
+
+.project-list .project-line {
+    position: absolute;
+    bottom: 6px;
+    border-bottom: 1px dotted rgba(0,0,0,0.3);
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+
+.project-list .project-price {
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.project-list .project-subtitle {
+    display: block;
+    float: left;
+    color: #B1B1B1;
+    font-family: Shadows Into Light,'Open Sans',arial;
+    font-size: 1.2rem;
+}
+
+.project-list span.clearfix {
+    position: relative;
+    display: block;
+}
+
+.gallery-trigger ul li a.active, .gallery-trigger ul li a:hover {
+    background: #FFB03B;
+    color: #fff;
+    border: 1px solid #FFB03B;
+}
+
+.gallery-trigger ul li {
+    display: inline-block;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.gallery-trigger ul li a {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #565656;
+    border-radius: 0px;
+    border: 1px solid #BBBBBB;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*-------------------
+PROJECT SECTION ENDS
+--------------------*/
+
 /*--------------------------
 CONTACT
 ---------------------------*/
+
+#contact{
+    background: url(../img/contactimage.jpeg) no-repeat center top;
+    background-color: rgba(221, 221, 221, 0.33);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+    font-size: 1.5em;
+    background-attachment: fixed;
+}
 
 .msg-row {
     margin-top: 56px;
@@ -422,21 +680,12 @@ CONTACT
     border-radius: 0;
 }
 
-#contact{
-    background: url(../img/contactimage.jpeg) no-repeat center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center 0;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    background-attachment: fixed;
-}
 
 #contact-contents{
     background-color: rgba(0, 0, 0, 0.6);
     padding-bottom: 30px;
     z-index: 2;
+    width: 80%
 }
 
 .contact-form {
@@ -471,24 +720,18 @@ CONTACT
     font-size:13px;
 }
 
-#sendmessage {
-    color: green;
-    border:1px solid green;
-    display:none;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
+
+.alert-success{
+    color: white;
+    margin-top: 5px;
 }
 
-#errormessage {
-    color: red;
-    display:none;
-    border:1px solid red;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
+
+.alert-danger{
+    color:white;
+    background-color: darkred;
+    border: 1px solid darkred;
+    margin-top: 5px;
 }
 
 #sendmessage.show, #errormessage.show, .show {
@@ -502,96 +745,32 @@ CONTACT
     color: rgb(255, 255, 255);
 }
 
-
-
-/*--------------------
-PROJECT SECTION
----------------------*/
-
-#Container .mix{
-    display: none;
+@-webkit-keyframes autofill {
+    to {
+        color: #FFB03B;
+        background: transparent;
+        border-bottom: 0.5px solid white;
+    }
 }
 
-.project-list{
-    width: 50%;
-    float: left;
-    padding: 15px;
-    position: relative;
-}
-
-.project-list .project-title {
-    float: left;
-    font-family: Montserrat,arial;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #FFB03B;
-}
-
-.project-list .project-line {
-    position: absolute;
-    bottom: 6px;
-    border-bottom: 1px dotted rgba(0,0,0,0.3);
-    margin-left: .6rem;
-    margin-right: .6rem;
-}
-
-.project-list .project-price {
-    font-weight: 600;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.project-list .project-subtitle {
-    display: block;
-    float: left;
-    color: #B1B1B1;
-    font-family: Shadows Into Light,'Open Sans',arial;
-    font-size: 1.2rem;
-}
-
-.project-list span.clearfix {
-    position: relative;
-    display: block;
-}
-
-.gallery-trigger ul li a.active, .gallery-trigger ul li a:hover {
-    background: #FFB03B;
-    color: #fff;
-    border: 1px solid #FFB03B;
-}
-
-.gallery-trigger ul li {
-    display: inline-block;
-    color: #fff;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-}
-
-.gallery-trigger ul li a {
-    padding: 10px 20px;
-    font-size: 14px;
-    color: #565656;
-    border-radius: 0px;
-    border: 1px solid #BBBBBB;
-    text-decoration: none;
-    cursor: pointer;
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
 }
 
 /*-------------------
-PROJECT SECTION ENDS
---------------------*/
-
-
-/*-------------------
-FOOTER 
+FOOTER
 --------------------*/
 .footer {
     width: 100%;
+    margin: 0;
     background-color: #222;
     position: relative;
     z-index: 1;
+}
+
+.footer ..row {
+    margin: 0;
 }
 
 .footer a {
@@ -633,9 +812,7 @@ FOOTER
     display: inline-block;
 }
 
-#contact{
-    background-color: rgba(221, 221, 221, 0.33);
-}
+
 
 .footer .social-list a {
     font-size: 32px;
@@ -655,8 +832,36 @@ MEDIA QUERIES
     .content-holder h2 {
         font-size: 23px;
     }
+
+    #about-picture{
+        height: 55vh;
+        margin: 0;
+    }
+
+    #my-pic{
+        height: 100%;
+        width: 20vw;
+    }
+
+    #picture-content{
+        width: 70vw;
+        min-height: 40vh;
+        font-size: 1.3em;
+    }
     .details-text p {
         line-height: 16.6px;
+    }
+
+    div.skills-tab button {
+        font-size: 4em;
+    }
+    div.panel {
+        font-size: 2em;
+    }
+
+    button.accordion {
+        padding: 10px;
+        font-size: 1.5vw;
     }
 }
 
@@ -667,16 +872,77 @@ MEDIA QUERIES
 
 
 @media (min-width: 450px) and (max-width: 767px) {
+
+
+    .header-h {
+        font-size: 7vw;
+    }
+
+    .header-p, body{
+        font-size: 3vw;
+    }
+
+    #about-picture{
+        display: inline-block;
+    }
+
+    #my-pic{
+        height: 70vh;
+        width: 50%;
+        margin: 0 25%;
+    }
+
+    #picture-content{
+        width: 80%;
+        min-height: 40vh;
+        margin: 5% 10%;
+        font-size: 1.2em;
+    }
+
     .details-text {
         border:0px;
         border-bottom: 2px solid #A87F41;
     }
 
+    div.skills-tab button {
+        margin: 4% 2%;
+        font-size: 8vw;
+        width: 20%;
+        height: 25vh;
+    }
+
     .skills-content{
+        margin-top: 0;
         -webkit-align-items: start;
         min-width: 40%;
-        margin: 0 5%;
+        font-size 1.5em;
     }
+
+    button.accordion {
+        padding: 10px;
+        font-size: 2vw;
+    }
+
+    div.panel{
+        font-size: 1em;
+    }
+
+    .pic{
+        width: 18%;
+    }
+
+    #contact{
+        font-size: 0.8em;
+    }
+
+    #my-contact{
+        margin-bottom: 4%;
+    }
+
+    .msg-row {
+        margin-top: 0;
+    }
+
 }
 
 
@@ -686,12 +952,9 @@ MEDIA QUERIES
 
 
 @media (min-width: 20px) and (max-width: 450px) {
+
     .project-list {
         width: 100%;
-    }
-
-    .menu-icon{
-        right: 5px;
     }
 
     .details-text {
@@ -702,16 +965,46 @@ MEDIA QUERIES
     .skills-content{
         -webkit-align-items: start;
         min-width: 80%;
-        margin: 0 10%;
     }
 
     #about-content{
-        display: -webkit-flex;
-        -webkit-flex-direction: column;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
     }
-    
-    .skills-icons{
-        width: 30%;
+
+
+
+    div.skills-tab{
+        float: left;
+        height: auto;
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        margin-top: 20%;
+    }
+
+    div.skills-tab button{
+        width: 100%;
+        height: auto;
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #FFB03B;
+        border-radius: 0;
+    }
+
+
+    .skills-content{
+        font-size: 1.2em;
+        float: left;
+        border: 1px solid #FFB03B;
+        width: 80%;
+        min-height: 290px;
+        margin: 0;
+        margin-top: 20%;
+        border-radius: 0;
+        animation-direction: alternate-reverse;
     }
 
     .header-h {
@@ -726,6 +1019,23 @@ MEDIA QUERIES
         margin-bottom: 15px;
     }
 
+    #about-picture{
+        display: inline-block;
+    }
+
+    #my-pic{
+        height: 25%;
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #picture-content{
+        width: 80%;
+        min-height: 40vh;
+        margin: 5% 10%;
+        font-size: 1em;
+    }
+
     #banner h2{
         font-size: 25px;
     }
@@ -734,7 +1044,29 @@ MEDIA QUERIES
         font-size: 25px;
     }
 
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
+    button.accordion {
+        padding: 10px;
+        font-size: 3vw;
+    }
 
+    div.panel{
+        font-size: 1em;
+    }
+
+    .pic{
+        height: 15vh;
+        width: 22%;
+    }
+
+    .msg-row {
+        margin-top: 0;
+    }
+
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
