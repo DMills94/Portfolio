@@ -65,7 +65,7 @@ const resolver = {
  * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
  */
 const strings = [
-    'HTML5', 'CSS3', 'Javascript'
+    'HTML5', 'CSS3', 'JavaScript'
 ];
 
 let counter = 0;

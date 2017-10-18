@@ -7,7 +7,7 @@
         <meta name="description" content="Portfolio for David Mills Front End Developer">
 
         <!-- CDN FOR FONTS -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Handlee|Shadows+Into+Light|Satisfy|Bree+Serif|Candal|PT+Sans">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans|Shadows+Into+Light|Satisfy|Bree+Serif|Candal|PT+Sans">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -18,8 +18,9 @@
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-        <!-- ANIMATE.CSS CDN FOR ANIMATION -->
+        <!-- ANIMATION.CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+        <link href="css/hover-min.css" rel="stylesheet">
 
 
         <!-- MY STYLE SHEET -->
@@ -30,7 +31,9 @@
 
     <body>
 
-        <!-- BANNER -->
+        <!----------------------
+HOMEPAGE AND NAV BAR
+------------------------------->
         <section id="banner">
             <div class="bg-color">
                 <header id="header">
@@ -49,12 +52,12 @@
                     </div>
                 </header>
                 <div id="homepage" class="homepage inner text-center">
-                    <video autoplay loop muted>
+                    <video autoplay loop muted playsinline>
                         <source src="videos/aboutbgvid.mp4" type="video/mp4">
                         Your browser does not support the video tag
                     </video>
 
-                    <div id="div1" class="homepage-text ">
+                    <div class="homepage-text">
                         <h1 id="my-name" class="animated fadeInDown">David Mills</h1>
                         <h1 id="my-description" class="animated fadeInDown">Front End Web Developer</h1>
                         <h1 class="animated fadeIn" id="my-animation" data-target-resolver></h1>
@@ -62,258 +65,317 @@
                 </div>
             </div>
         </section>
-        <!-- / BANNER -->
+        <!----------------------
+HOMEPAGE END SECTION
+------------------------------->
 
 
-        <!--ABOUT-->
-        <section id="wallpaper">
-            <section id="about" class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center marb-35">
-                            <h1 class="header-h wow fadeIn">About Me</h1>
-                            <p class="header-p wow fadeIn" data-wow-delay="0.5s">I am a <strong>passionate</strong> front end web developer focused on user interaction with simple, yet effective design. </p>
+        <!----------------------
+ABOUT SECTION
+------------------------------->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center marb-35">
+                        <h1 class="header-h wow fadeIn">About Me</h1>
+                        <p class="header-p wow fadeIn" data-wow-delay="0.5s">I am a <strong>passionate</strong> front end web developer focused on user interaction with simple, yet effective design. </p>
+                    </div>
+                    <div class="col-md-12 text-left marb-35" id="about-picture">
+                        <div id="image-of-me">
+                            <img id="my-pic" class="wow fadeInLeft" data-wow-delay="1s" src="/img/aboutmeimgcrp.jpg" alt="Picture of myself!">
                         </div>
-                        <div class="col-md-12 text-left marb-35" id="about-picture">
-                            <div id="image-of-me">
-                                <img id="my-pic" class="wow fadeInLeft" data-wow-delay="1s" src="/img/aboutme.jpg" alt="Picture of myself!">
-                            </div>
-                            <div class="header-p wow fadeInRight" data-wow-delay="1s" id="picture-content">
-                                <p class="about-intro">
-                                    <strong>I'm a Problem Solver.</strong><br>Whether it's as simple as  a riddle or writing the code for a project from scratch, I enjoy nothing more than seeing the end product of hardwork.<br>
-                                </p>
-                                <p class="about-intro">
-                                    <strong>I'm Dedicated</strong><br>There's nothing better than a job done well. I am always striving to learn and improve in everything I do.<br>
-                                </p>
-                                <p class="about-intro">
-                                    <strong>I'm Motivated</strong><br>I work at 100% effort until I am 100% satisfied with that I produce.<br>
-                                </p>
-                            </div>
+                        <div class="wow fadeInRight" data-wow-delay="1s" id="picture-content">
+                            <p class="about-intro">
+                                <strong>I'm a Problem Solver</strong><br>Whether it's as simple as  a riddle or writing the code for a project from scratch, I enjoy nothing more than seeing the end product of hardwork.<br>
+                            </p>
+                            <p class="about-intro">
+                                <strong>I'm Dedicated</strong><br>There's nothing better than a job well done. I am always striving to learn and improve in everything I do.<br>
+                            </p>
+                            <p class="about-intro">
+                                <strong>I'm Motivated</strong><br>I work at 100% effort until I am 100% satisfied with that I have produced.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-----------------------
+ABOUT SECTION ENDS
+-------------------------------->
+
+        <!----------------------
+SKILLS SECTION
+------------------------------->
+        <section id="chessboard">
+            <section id="myskills" class="section-padding">
+                <h1 class="text-center header-h wow fadeIn">My Skills</h1>
+
+                <div id="about-content">
+                    <div class="skills-tab">
+                        <button class="tablinks wow flipInX" data-wow-delay="1s" data-wow-duration="1.5s" onclick="openSkill(event, 'communication')" id="defaultOpen"><icon class="skills-icons fa fa-comment-o"></icon></button>
+                        <button class="tablinks wow flipInX" data-wow-delay="1.4s" data-wow-duration="1.1s" onclick="openSkill(event, 'design')"><icon class="skills-icons fa fa-bar-chart"></icon></button>
+                        <button class="tablinks wow flipInX" data-wow-delay="1.2s" data-wow-duration="1.3s" onclick="openSkill(event, 'skills')"><icon class="skills-icons fa fa-html5"></icon></button>
+                        <button class="tablinks wow flipInX" data-wow-delay="1.6s" data-wow-duration="0.9s" onclick="openSkill(event, 'teamwork')"><icon class="skills-icons fa fa-address-book-o"></icon></button>
+                    </div>
+                    <div class="wow fadeInLeft" data-wow-delay="2s">
+                        <div id="communication" class="skills-content">
+                            <h1 class="header-h">Communication</h1>
+                            <p>Communciation is an essential skill in any industry. I have experience from working within hospitality which has greatly increased my ability to communicate with and listen to the consumer and guarentee they receive the end product they are asking for.</p>
+                        </div>
+
+                        <div id="design" class="skills-content">
+                            <h1 class="header-h">Design</h1>
+                            <p>I love designing things that look <strong>GOOD</strong>. I have created graphics using Photoshop for my own personal livestreaming channel on Twitch.tv and am now actively increasing my CSS3 knowledge in order to continue improving.</p>
+                        </div>
+
+                        <div id="skills" class="skills-content">
+                            <h1 class="header-h">Technical Skills</h1>
+                            <p>My skills include <strong>HTML5, CSS3</strong> and <strong>JavaScript.</strong><br> I am able to use these to meet the design criteria required. I also have experience using JQuery, C# and a couple of .NET frameworks.</p>
+                        </div>
+
+                        <div id="teamwork" class="skills-content">
+                            <h1 class="header-h">Teamwork</h1>
+                            <p>Teamwork is essential to getting the job done, especially in the workplace. I've worked as a bartender for pubs and hotels during University holidays which developed key time management skills, like on that busy Saturday night, while also working together as a team to deliver a high quality service.</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="chessboard">
-                <section id="myskills" class="section-padding">
-                    <h1 class="text-center header-h wow fadeIn">My Skills</h1>
-
-                    <div id="about-content">
-                        <div class="skills-tab">
-                            <button class="tablinks wow flipInX" data-wow-delay="1s" data-wow-duration="1.5s" onclick="openSkill(event, 'communication')" id="defaultOpen"><icon class="skills-icons fa fa-comment-o"></icon></button>
-                            <button class="tablinks wow flipInX" data-wow-delay="1.4s" data-wow-duration="1.1s" onclick="openSkill(event, 'design')"><icon class="skills-icons fa fa-bar-chart"></icon></button>
-                            <button class="tablinks wow flipInX" data-wow-delay="1.2s" data-wow-duration="1.3s" onclick="openSkill(event, 'skills')"><icon class="skills-icons fa fa-html5"></icon></button>
-                            <button class="tablinks wow flipInX" data-wow-delay="1.6s" data-wow-duration="0.9s" onclick="openSkill(event, 'teamwork')"><icon class="skills-icons fa fa-address-book-o"></icon></button>
-                        </div>
-                        <div class="wow fadeInLeft" data-wow-delay="2s">
-                            <div id="communication" class="skills-content">
-                                <h1 class="header-h">Communication</h1>
-                                <p>Communciation is an essential skill in any industry. I have experience from working within hospitality which has greatly increased my ability to communicate with and listen to the consumer and guarentee they receive the end product they are asking for.</p>
-                            </div>
-
-                            <div id="design" class="skills-content">
-                                <h1 class="header-h">Design</h1>
-                                <p>I love designing things that look <strong>GOOD</strong>. I have created graphics using Photoshop for my own personal livestreaming channel on Twitch.tv and am now actively increasing my CSS3 knowledge in order to continue improving.</p>
-                            </div>
-
-                            <div id="skills" class="skills-content">
-                                <h1 class="header-h">Technical Skills</h1>
-                                <p>My skills include <strong>HTML5, CSS3</strong> and <strong>JavaScript.</strong><br> I am able to use these to meet the design criteria required. I also have experience using JQuery, C# and a couple of .NET frameworks.</p>
-                            </div>
-
-                            <div id="teamwork" class="skills-content">
-                                <h1 class="header-h">Teamwork</h1>
-                                <p>Teamwork is essential to getting the job done, especially in the work place. I've worked as a bartender for pubs and hotels during my holiday time at University which developed not only key time management skills (like on that busy Saturday night) but also working together to deliver a high quality service.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
 
-                <!--/ABOUT-->
+            <!----------------------
+END SKILLS SECTION
+----------------------------------->
 
 
-                <!-- EDUCATION -->
-                <section id="education" class="section-padding">
-                    <div class="container wow fadeIn" data-wow-delay="0.5s">
-                        <div class="row ">
-                            <div class="col-md-12 text-center marb-35">
-                                <h1 class="header-h" data-wow-delay="0.7s">My Education</h1>
-                            </div>
-                            <div id="education-content" class="col-md-12 text-center gallery-trigger">
-                                <p class="header-p">Click to expand content.</p>
-
-                                <button class="accordion wow fadeInLeft" data-wow-delay="0.9s">JustIT Development Professional Programme - September 2017 <span class="label label-default">ONGOING</span></button>
-                                <div class="panel wow fadeInLeft" data-wow-delay="0.9s">
-                                    <div class="pic">
-                                        <img id="justit-logo" src="/img/justITlogo2.png" alt="JustIT logo">
-                                    </div>
-                                    <div id="justit-content" class="accordion-content">
-                                        <p>After graduating from University I started to delve into other aspects of programming. Self teaching myself the basics of Web Development using HTML5, CSS3 and JavaScript.<br><br>I joined the JustIT Development Professional Programme to boost my studies and increase my skills as a developer.</p>
-                                    </div>
-                                </div>
-
-                                <button class="accordion wow fadeInLeft" data-wow-delay="1s">BSc (Hons) Biochemistry 2012-2016</button>
-                                <div class="panel wow fadeInLeft" data-wow-delay="1s">
-                                    <div  class="pic">
-                                        <img id="uob-logo" src="/img/bath-logo.png" alt="University of Bath Logo">
-                                    </div>
-                                    <div id="uob-content" class="accordion-content">
-                                        <p>I graduated from the University of Bath with a bachelors with Honours in Biochemistry in 2016. <br><br>During my time at University I discovered my interest in programming. While completing my final year project, I self taught Python inorder to manipulate large datasets, producing statistical data and graphs along with creating a colour coded vector map of Wales.</p>
-                                    </div>
-                                </div>
-
-                                <button class="accordion wow fadeInLeft" data-wow-delay="1.1s">A Levels - 2012</button>
-                                <div class="panel wow fadeInLeft" data-wow-delay="1.1s">
-                                    <div class="pic">
-                                        <img id="sfcf-logo" src="/img/sfcf.jpg" alt="The Sixth Form College Farnborough Logo">
-                                    </div>
-                                    <div id="sfcf-content" class="accordion-content">
-                                        <p>I attended the Sixth Form College Farnborough and achieved the following A2-Levels</p>
-                                        <ul>
-                                            <li>Maths: <strong>A</strong></li>
-                                            <li>Further Maths: <strong>A</strong></li>
-                                            <li>Biology: <strong>A</strong></li>
-                                            <li>Chemistry: <strong>B</strong></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <!-- PROJECTS -->
-            <section id="project-list" class="section-padding">
-                <div class="container">
-                    <div class="row">
+            <!----------------------
+EDUCATION SECTION
+----------------------------------->
+            <section id="education" class="section-padding">
+                <div class="container wow fadeIn" data-wow-delay="0.5s">
+                    <div class="row ">
                         <div class="col-md-12 text-center marb-35">
-                            <h1 class="header-h">My Projects</h1>
-                            <p class="header-p">Below are examples of projects I have made. </p>
+                            <h1 class="header-h" data-wow-delay="0.7s">My Education</h1>
                         </div>
-                        <div class="col-md-12  text-center gallery-trigger">
-                            <ul>
-                                <li><a class="filter" data-filter="all">Show All</a></li>
-                                <li><a class="filter" data-filter=".category-1">HTML5</a></li>
-                                <li><a class="filter" data-filter=".category-2">CSS3</a></li>
-                                <li><a class="filter" data-filter=".category-3">JavaScript</a></li>
-                                <li><a class="filter" data-filter=".category-4">API</a></li>
-                                <li><a class="filter" data-filter=".category-5">JQuery</a></li>
-                            </ul>
+                        <div id="education-content" class="col-md-12 text-center gallery-trigger">
+                            <p class="header-p">Click to expand content.</p>
+
+                            <button class="accordion wow fadeInLeft" data-wow-delay="0.9s">JustIT Development Professional Programme - September 2017 <span class="label label-default">ONGOING</span></button>
+                            <div class="panel wow fadeInLeft" data-wow-delay="0.9s">
+                                <div class="pic">
+                                    <img id="justit-logo" src="/img/justITlogo2.png" alt="JustIT logo">
+                                </div>
+                                <div id="justit-content" class="accordion-content">
+                                    <p>After graduating from University I started to explore other aspects of programming. Teaching myself the basics of Web Development using HTML5, CSS3 and JavaScript.<br><br>I joined the JustIT Development Professional Programme to further my studies and increase my skills as a developer.</p>
+                                </div>
+                            </div>
+
+                            <button class="accordion wow fadeInLeft" data-wow-delay="1s">BSc (Hons) Biochemistry 2012-2016</button>
+                            <div class="panel wow fadeInLeft" data-wow-delay="1s">
+                                <div  class="pic">
+                                    <img id="uob-logo" src="/img/bath-logo.png" alt="University of Bath Logo">
+                                </div>
+                                <div id="uob-content" class="accordion-content">
+                                    <p>I graduated from the University of Bath with a Bachelors degree with Honours in Biochemistry in 2016. <br><br>During my time at University I discovered my interest in programming. While completing my final year project, I taught myself Python in order to manipulate large datasets, producing statistical data and graphs along with creating a colour coded vector map of Wales.</p>
+                                </div>
+                            </div>
+
+                            <button class="accordion wow fadeInLeft" data-wow-delay="1.1s">A Levels - 2012</button>
+                            <div class="panel wow fadeInLeft" data-wow-delay="1.1s">
+                                <div class="pic">
+                                    <img id="sfcf-logo" src="/img/sfcf.jpg" alt="The Sixth Form College Farnborough Logo">
+                                </div>
+                                <div id="sfcf-content" class="accordion-content">
+                                    <p>I attended the Sixth Form College Farnborough and achieved the following A2-Levels</p>
+                                    <ul>
+                                        <li>Maths: <strong>A</strong></li>
+                                        <li>Further Maths: <strong>A</strong></li>
+                                        <li>Biology: <strong>A</strong></li>
+                                        <li>Chemistry: <strong>B</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
-                        <!--<div id="Container">
-<div class="mix category-1 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-1 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-1 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-1 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-2 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-2 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-2 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-2 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-3 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-3 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-3 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-<div class="mix category-3 menu-restaurant" data-myorder="2">
-<span class="clearfix">
-<a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-<span style="left: 166px; right: 44px;" class="menu-line"></span>
-<span class="menu-price">$20.99</span>
-</span>
-<span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-</div>
-</div>-->
                     </div>
                 </div>
             </section>
         </section>
-        <!--/ PROJECTS -->
+        <!----------------------
+EDUCATION END SECTION
+------------------------------->
 
 
-        <!-- CONTACT -->
+
+        <!----------------------
+PROJECT SECTION
+------------------------------->
+
+        <section id="project-list" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center marb-35 wow fadeIn">
+                        <h1 class="header-h">My Projects</h1>
+                        <p class="header-p">Below are examples of projects I have made. </p>
+                    </div>
+                    <div class="col-md-12 text-center gallery-trigger">
+                        <ul>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.5s" data-wow-duration="1.1s"><a class="filter" data-filter="all">Show All</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.6s" data-wow-duration="1.2s"><a class="filter" data-filter=".category-1">HTML5</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.7s" data-wow-duration="1.3s"><a class="filter" data-filter=".category-2">CSS3</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.8s" data-wow-duration="1.4s"><a class="filter" data-filter=".category-3">JavaScript</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.9s" data-wow-duration="1.5s"><a class="filter" data-filter=".category-4">API</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="Container">
+
+                        <!----------------------
+-------------------PROJECT 1
+----------------------------------------------->
+                        <div class="mix category-1 category-2 category-3 project-item text-center" id="project-1" data-myorder="2">
+                            <div class="clearfix">
+                                <h1>PROJECT 1</h1>
+                                <div style="left: 166px; right: 44px;" class="project-line"></div>
+                                <div class="project-info">Basic Application</div>
+                            </div>
+                            <div class="wrapper">
+                                <div class="project-btn">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Project</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h1 class=" header-h modal-title">PROJECT 1</h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="proj-img-large">
+                                            <img src="" alt="Project 1 Larger Preview">
+                                        </div>
+                                        <div>
+                                            <p>Description of Project 1</p>
+                                        </div>
+                                        <a target="_blank" href="https://google.co.uk"><button type="button" class="proj-btn">Live Project!</button></a>
+                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!----------------------
+-------------------PROJECT 2
+----------------------------------------------->
+                        <div class="mix category-1 category-2 category-3 project-item text-center" id="project-2" data-myorder="2">
+                            <div class="clearfix">
+                                <h1>PROJECT 2</h1>
+                                <div style="left: 166px; right: 44px;" class="project-line"></div>
+                                <div class="project-info">CCTV Generation</div>
+                            </div>
+                            <div class="wrapper">
+                                <div class="project-btn">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">View Project</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div id="myModal2" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h1 class=" header-h modal-title">PROJECT 2</h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="proj-img-large">
+                                            <img src="" alt="Project 2 Larger Preview">
+                                        </div>
+                                        <div>
+                                            <p>Description of Project 2</p>
+                                        </div>
+                                        <a target="_blank" href="https://google.co.uk"><button type="button" class="proj-btn">Live Project!</button></a>
+                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!----------------------
+-------------------PROJECT 3
+----------------------------------------------->
+                        <div class="mix category-1 category-2 category-4 project-item text-center" id="project-3" data-myorder="2">
+                            <div class="clearfix">
+                                <h1>PROJECT 3</h1>
+                                <div style="left: 166px; right: 44px;" class="project-line"></div>
+                                <div class="project-info">osu! API tracker</div>
+                            </div>
+                            <div class="wrapper">
+                                <div class="project-btn">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">View Project</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div id="myModal3" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h1 class=" header-h modal-title">PROJECT 3</h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="proj-img-large">
+                                            <img src="" alt="Project 3 Larger Preview">
+                                        </div>
+                                        <div>
+                                            <p>Description of Project 3</p>
+                                        </div>
+                                        <a target="_blank" href="https://google.co.uk"><button type="button" class="proj-btn">Live Project!</button></a>
+                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!----------------------
+PROJECT SECTION END
+------------------------------->
+
+
+        <!----------------------
+CONTACT SECTION
+------------------------------->
         <section id="contact" class="section-padding">
             <div id="contact-contents" class="container wow fadeInLeft">
                 <div class="row">
                     <div class="col-md-12 text-center wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="header-h">Contact me!</h1>
-                        <p class="header-p">Feel free to contact me via phone or the form below!</p>
+                        <h1 class="header-h">Contact me</h1>
+                        <p class="header-p">Contact me by phone or the form below</p>
                     </div>
                 </div>
                 <div class="row msg-row">
@@ -333,7 +395,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="dark-blue regular wow fadeInLeft" data-wow-delay="1.2s">My CV</h4>
-                                <p class="light-blue regular alt-p wow fadeInDown" data-wow-delay="2s"><a>Download</a></p>
+                                <p class="light-blue regular alt-p wow fadeInDown" data-wow-delay="2s"><a href="files/CV.pdf" target="_blank">Download</a></p>
                             </div>
                         </div>
                     </div>
@@ -380,10 +442,14 @@
                 </div>
             </div>
         </section>
-        <!-- / CONTACT -->
+        <!----------------------
+CONTACT SECTION ENDS
+------------------------------->
 
 
-        <!-- FOOTER -->
+        <!----------------------
+FOOTER
+------------------------------->
         <footer class="footer text-center">
             <div class="footer-top">
                 <div class="row">
@@ -397,8 +463,15 @@
                 </div>
             </div>
         </footer>
-        <!-- / footer -->
+        <!----------------------
+FOOTER ENDS
+------------------------------->
 
+
+
+        <!----------------------
+SCRIPT IMPORTS
+------------------------------->
         <script src="js/wow.min.js"></script>
         <script>
             new WOW().init();
@@ -406,11 +479,9 @@
         <script src="js/typewriter.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.easing.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/custom.js"></script>
-        <!--        <script src="contactform/contactform.js"></script>-->
-        <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> --><!-- or use local jquery -->
         <script src="/js/jqBootstrapValidation.js"></script>
         <script src="./js/contact_me.js"></script>
 
