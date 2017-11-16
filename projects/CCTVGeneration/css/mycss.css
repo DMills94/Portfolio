@@ -1,0 +1,524 @@
+/*=======================================================================
+CCTV GENERATION CCS STYLE SHEET
+========================================================================*/
+
+/*-----------------------------------------------------------------------
+WEBSITE COLOUR SCHEME
+-----------------------------------------------------------------------=*/
+
+/*
+Black and White simplistic colour scheme
+*/
+
+/*-----------------------------------
+MOBILE DEFAULT STYLES - GLOBAL STYLES
+------------------------------------*/
+
+/* Prevents adjustments of font size after orientation change in IE on Windows phone and in IOS */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Apply a natural box model layout to all elements */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* clearfix: Force an element not to collapse */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* All images and video set to 100% width of their parent container */
+img, video {
+    width: 100%;
+}
+
+body {
+
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Sedgwick Ave Display', cursive;
+    margin-top: 50px;
+}
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Sedgwick Ave', cursive;
+    margin-top: 50px;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: 100px auto;
+}
+
+/*Chrome Center Select Box Text (only selected)*/
+select {
+    text-align-last: center;
+}
+
+/*-------------------------------------*/
+
+/*-----------------------------------
+LANDING PAGE STYLES
+------------------------------------*/
+
+#home{
+    height: 100vh;
+}
+
+.homeBgImage {
+    position: relative;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom 0;
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+.banner-text{
+    width: 100%;
+    height: 170px;
+    text-align: center;
+}
+
+#homeLogo{
+    position: relative;
+    max-width: 500px;
+    height: 115px;
+    top: 20px;
+}
+
+.basketIcon {
+    position: absolute;
+    top: 178px;
+    z-index: 115;
+    margin: 0 0 0 65vw;
+}
+
+.fa-shopping-basket {
+    font-size: 2em;
+    color: white;
+}
+
+.logoC {
+    position: absolute;
+    top: 150px;
+    width: 120px;
+    z-index: 110;
+    margin: 0 73vw 0 4vw;
+}
+
+.navC {
+    color: white;
+    height: auto;
+    width: 100%;
+    background-color: black;
+    top: 170px;
+    z-index: 115;
+    font-family: 'Allan', cursive;
+}
+
+ul.menu-items {
+    padding-left: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+nav li a, nav li {
+    color: white;
+    opacity: 1;
+    width: 40%;
+    margin: 0;
+    margin-left: 60%;
+    padding: 0%;
+    float: none;
+    display: block;
+    outline-style: none !important;
+    text-decoration: none;
+}
+
+.menu-items a {
+
+    padding: 15px 5vw 15px 0;
+    color: white;
+    text-align: right;
+}
+
+.navBtn  {
+    font-size: 2.5em;
+    display: block;
+    margin: 0 0 0 80vw;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 115;
+}
+
+
+.menu-items li {
+    border-top: 2px solid rgba(255,255,255,1);
+}
+
+.menu-items, .view-basket, .shoppingB {
+    display: none;
+}
+
+
+.news-home{
+    letter-spacing: 3px;
+    font-size: 2em;
+    font-weight: lighter;
+    text-align: left;
+    padding: 75px 0 0 4vw;
+    color: black;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 50%;
+    position: relative;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: white;;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor:pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+footer{
+    bottom: 0;
+    height: 150px;
+    color: white;
+    background: black;
+    font-size: 14px;
+}
+
+#copyright{
+    font-family: 'Allan', cursive;
+    font-size: 20px;
+    width: 50%;
+    position: relative;
+    left: 50px;
+    top: 10px;
+
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.social-media{
+    position: relative;
+    top: 30px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.media-logo{
+    font-size: 50px;
+    margin: 0 50px;
+}
+
+#logo-fb{
+    color: #3b5998;
+}
+
+#logo-twitter{
+    color: #00aced;
+}
+
+#logo-ig{
+    color: #8a3ab9;
+}
+
+/*-----------------------------------
+SHOP PAGE STYLES
+------------------------------------*/
+
+#shopItems{
+    min-height: 70vh;
+}
+
+.itemBox {
+    position: relative;
+    display: block;
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    padding: 10px;
+    border: 3px groove black;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+.productDesign{
+    width: 100%;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+}
+
+.productShop{
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.productSlides{
+    display: none;
+    border: 2px solid black;
+}
+
+.productPrevBox{
+    width: 100%;
+    display: flex;
+}
+
+.productPrev{
+    display: block;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+.productPrevImg{
+    border: 2px solid black;
+    border-top: none;
+    cursor: pointer;
+}
+
+.productSelectBox{
+    display: flex;
+    justify-content: center;
+}
+
+.productSelect{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.selectBox{
+    width: 80%;
+    text-align: center;
+    border: 1px solid black;
+    font-family: sans-serif;
+}
+
+.basketBtnsBox{
+    width: 100%;
+    margin: 15% 0 0;
+}
+
+.basketBtns{
+    padding: 5px;
+    width: 30%;
+    background: white;
+    border: 2px solid black;
+    cursor: pointer;
+    font-family: 'Sedgwick Ave', cursive;
+    margin: 0 5%;
+}
+
+.basketBtns a,
+.basketBtns a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+/*-----------------------------------
+ABOUT PAGE STYLES
+------------------------------------*/
+
+#about{
+    min-height: 70vh;
+    padding: 60px 0;
+    background-image: url("../images/aboutbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -200px;
+}
+
+#aboutText{
+    color: whitesmoke;
+    font-family: 'Allan', cursive;
+    font-size: 24px;
+    line-height: 25px;
+    padding: 10px 10%;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5);
+}
+
+/*-----------------------------------
+CONTACT PAGE STYLES
+------------------------------------*/
+
+#contact{
+    font-family: cursive;
+}
+
+#contactForm{
+    width: 90%;
+    margin: 100px auto 50px;
+    padding: 0;
+    font-family: 'Allan', cursive;
+    font-size: 20px;
+}
+
+#fullName{
+    display: flex;
+}
+
+.name-field{
+    width: 50%;
+}
+
+#contactBtn{
+    font-family: 'Allan', cursive;
+    font-size: 20px;
+    background: black;
+    border: black;
+    width: 40%;
+    margin: 0 30%;
+}
+
+/*---------------------------------------------------------------------
+MOBILE STYLES - 568 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 568px) {
+
+}
+
+
+
+/*---------------------------------------------------------------------
+TABLET STYLES - 768 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+}
+
+/*---------------------------------------------------------------------
+DESKTOP STYLES - 1024 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+
+}
+
+
+/*---------------------------------------------------------------------
+DESKTOP STYLES - 1280 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 1280px) {
+
+}

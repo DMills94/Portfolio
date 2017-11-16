@@ -1,0 +1,152 @@
+<!--=======================================================================
+LANDING PAGE FOR THE APPLICATION "1V1 BRACKET BUILDER"
+
+HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
+========================================================================-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>1v1 Tournament Builder</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <!-----------------IMPORT STYLE SHEETS----------------->
+        <!--CSS Reset Normalizer-->
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <!--MY CSS-->
+        <link href="css/mycss.css" rel=stylesheet type="text/css">
+    </head>
+
+    <body>
+        <h1>1V1 TOURNAMENT BUILDER</h1>
+        <h3>Your handy 16 person bracket generator with responsive updating!</h3>
+
+
+        <p>Is your tournament seeded?</p>
+        <form>
+            <input class="radioBtn" id="seedYes" type="radio" name="seeding"> Yes
+            <input class="radioBtn" id="seedNo" type="radio" name="seeding"> No
+        </form>
+
+        <p id="radioText"></p>
+        <div id="inputField">
+            <div id="seedings">
+                Seed #1<br>Seed #2<br>Seed #3<br>Seed #4<br>Seed #5<br>Seed #6<br>Seed #7<br>Seed #8<br>Seed #9<br>Seed #10<br>Seed #11<br>Seed #12<br>Seed #13<br>Seed #14<br>Seed #15<br>Seed #16
+            </div>
+            <div id="userInput">
+                <form>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br>
+                    <input class="player-input" type="text" placeholder='team/player' required><br><br>
+                </form>
+            </div>
+        </div>
+        <button id="tourneyCreateBtn">Generate!</button>
+        <button id="tourneyModifyBtn">Modify!</button>
+
+        <div id="errorMessage"></div>
+
+
+        <div id=roundSelect>
+            <button class="round-select-btn">RO16</button><button class="round-select-btn">QF</button><button class="round-select-btn">SF</button><button class="round-select-btn">GF</button>
+        </div>
+        <section id="bracket">
+            <div id="ro16" class='tourney-round'>
+                <h2 class="round-header">RO16</h2>
+                <div class="round-matches">
+                    <div class="vs-box">
+                        <div><button id="player1" class="player-box" onclick="Winner(1, this.innerHTML, this.id, 'player2')"></button></div>
+                        <div><button id="player2" class="player-box" onclick="Winner(1, this.innerHTML, this.id, 'player1')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player3" class="player-box" onclick="Winner(2, this.innerHTML, this.id, 'player4')"></button></div>
+                        <div><button id="player4" class="player-box" onclick="Winner(2, this.innerHTML, this.id, 'player3')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player5" class="player-box" onclick="Winner(3, this.innerHTML, this.id, 'player6')"></button></div>
+                        <div><button id="player6" class="player-box" onclick="Winner(3, this.innerHTML, this.id, 'player5')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player7" class="player-box" onclick="Winner(4, this.innerHTML, this.id, 'player8')"></button></div>
+                        <div><button id="player8" class="player-box" onclick="Winner(4, this.innerHTML, this.id, 'player7')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player9" class="player-box" onclick="Winner(5, this.innerHTML, this.id, 'player10')"></button></div>
+                        <div><button id="player10" class="player-box" onclick="Winner(5, this.innerHTML, this.id, 'player9')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player11" class="player-box" onclick="Winner(6, this.innerHTML, this.id, 'player12')"></button></div>
+                        <div><button id="player12" class="player-box" onclick="Winner(6, this.innerHTML, this.id, 'player11')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player13" class="player-box" onclick="Winner(7, this.innerHTML, this.id, 'player14')"></button></div>
+                        <div><button id="player14" class="player-box" onclick="Winner(7, this.innerHTML, this.id, 'player13')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="player15" class="player-box" onclick="Winner(8, this.innerHTML, this.id, 'player16')"></button></div>
+                        <div><button id="player16" class="player-box" onclick="Winner(8, this.innerHTML, this.id, 'player15')"></button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ro8" class='tourney-round'>
+                <h2 class="round-header">Quarter Finals</h2>
+                <div class="round-matches">
+                    <div class="vs-box">
+                        <div><button id="qf1" class="player-box" onclick="Winner(9, this.innerHTML, this.id, 'qf2')"></button></div>
+                        <div><button id="qf2" class="player-box" onclick="Winner(9, this.innerHTML, this.id, 'qf1')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="qf3" class="player-box" onclick="Winner(10, this.innerHTML, this.id, 'qf4')"></button></div>
+                        <div><button id="qf4" class="player-box" onclick="Winner(10, this.innerHTML, this.id, 'qf3')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="qf5" class="player-box" onclick="Winner(11, this.innerHTML, this.id, 'qf6')"></button></div>
+                        <div><button id="qf6" class="player-box" onclick="Winner(11, this.innerHTML, this.id, 'qf5')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="qf7" class="player-box" onclick="Winner(12, this.innerHTML, this.id, 'qf8')"></button></div>
+                        <div><button id="qf8" class="player-box " onclick="Winner(12, this.innerHTML, this.id, 'qf7')"></button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ro4" class='tourney-round'>
+                <h2 class="round-header">Semi Finals</h2>
+                <div class="round-matches">
+                    <div class="vs-box">
+                        <div><button id="sf1" class="player-box" onclick="Winner(13, this.innerHTML, this.id, 'sf2')"></button></div>
+                        <div><button id="sf2" class="player-box" onclick="Winner(13, this.innerHTML, this.id, 'sf1')"></button></div>
+                    </div>
+                    <div class="vs-box">
+                        <div><button id="sf3" class="player-box" onclick="Winner(14, this.innerHTML, this.id, 'sf4')"></button></div>
+                        <div><button id="sf4" class="player-box" onclick="Winner(14, this.innerHTML, this.id, 'sf3')"></button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ro2" class='tourney-round'>
+                <h2 class="round-header">GRAND FINALS</h2>
+                <div class="round-matches">
+                    <div class="vs-box">
+                        <div><button id="finalist1" class="player-box" onclick="Winner(15, this.innerHTML, this.id, 'finalist2')"></button></div>
+                        <div><button id="finalist2" class="player-box" onclick="Winner(15, this.innerHTML, this.id, 'finalist1')"></button></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <script src="js/myjs.js" type="text/javascript"></script>
+    </body>
+</html>
