@@ -37,7 +37,7 @@ img, video {
 body {
     width: 100%;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Chewy', cursive;
 }
 
 h1 {
@@ -50,18 +50,23 @@ h3 {
 }
 
 
-
-
 /*USER INPUT*/
 
 .radioBtn {
     display: inline-block;
+    height: 15px;
+    width: 15px;
 }
 
+#startingImg {
+    width: 60%;
+    margin: 20% auto 0;
+}
+
+
 #inputField{
-    visibility: hidden;
+    display: none;
     width: 100%;
-    display: inline-flex;
     justify-content: center;
 }
 
@@ -87,20 +92,41 @@ h3 {
 
 #userInput input{
     text-align: center;
-    line-height: 22px;
+    line-height: 24px;
+    border: 1px solid black;
+}
+
+.generate-btns {
+    font-family: monospace;
+    font-size: 10px;
 }
 
 #tourneyCreateBtn {
+    width: 20%;
+    height: 50px;
     visibility: hidden;
+    cursor: pointer;
+    background: white;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+#tourneyModifyBtn {
+    width: 20%;
+    height: 50px;
+    display: none;
     cursor: pointer;
     background: white;
     border: 2px solid black;
 }
 
-#tourneyModifyBtn {
+#tourneyResetBtn {
+    width: 20%;
+    height: 50px;
     display: none;
     cursor: pointer;
-    background: white;
+    background: red;
+    color: white;
     border: 2px solid black;
 }
 
@@ -109,14 +135,24 @@ h3 {
 #roundSelect{
     display: none;
     width: 100%;
-    margin-top: 50px;
 }
 
 .round-select-btn{
     cursor: pointer;
     width: 25%;
+    height: 60px;
     padding: 0;
     margin: 0;
+    color: white;
+    background: black;
+    border: 2px solid maroon;
+    font-family: 'Iceland', cursive;
+    font-size: 25px;
+}
+
+#ro16Btn{
+    background: white;
+    color: black;
 }
 
 /*ROUND SELECT DISPLAYS (For mobile)*/
@@ -125,14 +161,28 @@ h3 {
 }
 
 #ro8{
-    /*    display: none;*/
+    display: none;
 }
 
 #ro4{
-    /*    display: none;*/
+    display: none;
 }
 
 #ro2{
+    display: none;
+}
+
+#winnersMessage {
+    display: none;
+    height: 80vw;
+    font-size: 7vw;
+    line-height: 40vw;
+    color: red;
+    background-image: url(../images/winnerBg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /*BRACKET CSS*/
@@ -143,14 +193,17 @@ h3 {
     border: 2px solid black;
 }
 
-.tourney-round{
-    width: 100%;
-    height: 700px;
-}
 .round-header{
     text-align: center;
-    height: 10%;
+    height: 100px;
+    line-height: 100px;
     margin: 0;
+    font-family: 'Iceland', cursive;
+}
+
+.tourney-round{
+    width: 100%;
+    height: 800px;
 }
 
 .round-matches {
@@ -187,4 +240,187 @@ h3 {
     margin: 0 20%;
     background: white;
     border: 2px solid black;
+}
+
+.winner {
+    background: limegreen !important;
+}
+
+.loser {
+    background: white !important;
+}
+
+
+/*------------------------------------------------*/
+/*                  MEDIA QUERIES                 */
+/*------------------------------------------------*/
+
+/*---------------------------------------------------------------------
+TABLET STYLES - 768 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+    body {
+        font-size: 30px;
+    }
+
+    h1{
+        margin-top: 20%;
+    }
+
+    #startingImg{
+        width: 40%;
+        margin-top: 10%;
+    }
+
+    #userInput input{
+        line-height: 24px;
+    }
+
+    #seedings {
+        line-height: 39px;
+    }
+
+    .generate-btns {
+        font-size: 20px;
+    }
+
+    .tourney-round{
+        height: 900px;
+    }
+
+    .player-box{
+        width: 40%;
+        margin: 0 30%;
+        font-size: 20px;
+    }
+
+    #winnersMessage{
+        height: 500px;
+        line-height: 250px;
+        font-size: 2em;
+    }
+}
+
+/*---------------------------------------------------------------------
+DESKTOP STYLES - 1024 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+
+    body{
+        font-size: 18px;
+    }
+
+    h1{
+        margin-top: 5%;
+        font-size: 50px;
+    }
+
+    #seedingBtns{
+        font-size: 25px;
+    }
+
+    .radioBtn{
+        width: 20px;
+        height: 20px;
+    }
+
+    #startingImg{
+        width: 50%;
+        margin: 5% auto 0;
+    }
+
+    #userInput input{
+        line-height: 24px;
+    }
+
+    #seedings {
+        line-height: 28px;
+    }
+
+    .generate-btns {
+        font-size: 15px;
+    }
+
+    #tourneyCreateBtn {
+        width: 10%;
+        height: 50px;
+    }
+
+    #tourneyModifyBtn {
+        width: 10%;
+        height: 50px;
+    }
+
+    #tourneyResetBtn {
+        width: 10%;
+        height: 50px;
+    }
+
+    #roundSelect{
+        display: none !important;
+    }
+
+    #ro16{
+        display: block !important;
+    }
+
+    #ro8{
+        display: block !important;
+    }
+
+    #ro4{
+        display: block !important;
+    }
+
+    #ro2{
+        display: block !important;
+    }
+
+    .round-header{
+        font-size: 40px;
+    }
+
+    .tourney-round{
+        height: 800px;
+    }
+
+    .player-box{
+        width: 80%;
+        margin: 0 10%;
+    }
+}
+
+
+/*---------------------------------------------------------------------
+DESKTOP STYLES - 1280 SCREEN RESOLUTION
+---------------------------------------------------------------------*/
+@media screen and (min-width: 1280px) {
+
+    h1 {
+        font-size: 80px;
+    }
+
+    #startingImg{
+        width: 20%;
+    }
+
+    .generate-btns {
+        font-size: 30px;
+    }
+
+    #tourneyCreateBtn {
+        width: 20%;
+        height: 100px;
+    }
+
+    #tourneyModifyBtn {
+        width: 20%;
+        height: 100px;
+    }
+
+    #tourneyResetBtn {
+        width: 20%;
+        height: 100px;
+    }
 }

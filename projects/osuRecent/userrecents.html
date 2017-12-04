@@ -1,0 +1,19 @@
+
+<div id="playerInfo">
+    <a href="https://osu.ppy.sh/u/{{user.username}}"><img ng-src="http://s.ppy.sh/a/{{user.user_id}}" title="{{user.username}}"></a>
+    <h1 id="playerName">{{user.username}}</h1>
+</div>
+
+<div id="recentHistory">
+    <div class="beatmap-replay" ng-repeat="recent in recents">
+        <div class="map-name"><strong>{{replays[$index].artist}} - {{replays[$index].title}} [{{replays[$index].version}}]</strong></div>
+        <div class="map-image"><a href="https://osu.ppy.sh/b/{{recent.beatmap_id}}"><img ng-src="https://b.ppy.sh/thumb/{{replays[$index].beatmapset_id}}l.jpg"></a></div>
+        <div class="map-rank"><img ng-src={{recent.rank}}></div>
+        <div class="map-mods">Mods coming soon</div>
+        <div class="map-score">Score: {{recent.score | number}} ({{recent.accuracy | number:2}}%)</div>
+        <div class="map-combo">Combo: {{recent.maxcombo | number}}/{{replays[$index].max_combo}}</div>
+        <div class="map-accuracy" title="{300s/100s/50s/miss}">{ {{recent.count300 | number}}/{{recent.count100 | number}}/{{recent.count50 | number}}/{{recent.countmiss | number}} }</div>
+        <div class="map-date">{{recent.date | date:"short"}}</div>
+
+    </div>
+</div>

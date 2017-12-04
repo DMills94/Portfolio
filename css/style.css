@@ -98,7 +98,6 @@ BACKGROUND IMAGE/VIDEO
     z-index: 2;
     top: 20%;
     width: 100%;
-    height: 100%;
     text-align: center;
     color: white;
     animation-duration: 1.5s;
@@ -232,8 +231,8 @@ ABOUT SECTION
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin:0;
-    min-height: 100vh;
+    margin: 0;
+    min-height: auto;
     font-size:12px;
     padding: 0;
 }
@@ -258,38 +257,32 @@ ABOUT SECTION
     min-height: 100vh;
 }
 
-
 #about-picture{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: 60vh;
-    margin: 0;
+    margin: 100px 0 0 0;
 }
 
 #image-of-me{
     width: 30%;
-    height: 100%;
-    margin-left: 10%;
 }
 
 #my-pic{
-    width: 65%;
+    width: 70%;
     height: 60%;
-    position: relative;
-    top: 20%;
-    left: 20%;
+    margin: 20% 0 20% 30%;
     border: 10px groove #cc0000;
 }
 
 #picture-content{
     font-size: 2.5vmin;
-    width: 50%;
+    width: 70%;
     padding: 2.5%;
-    margin-right: 15%;
     border-radius: 10px;
-    float: left;
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: space-between;
 }
 
@@ -319,18 +312,11 @@ SKILLS SECTION
     padding-bottom: 0;
 }
 
-#about-content{
-    padding-bottom 100px;
-    width: 100%;
-    display: inline-flex;
-    flex-wrap: wrap;
-}
-
 /* Style the tab */
 div.skills-tab {
-    width: 70vw;
-    height: 30vh;
-    margin: 4% auto 0;
+    width: 60%;
+    height: 200px;
+    margin: 200px auto;
     overflow: hidden;
     cursor: pointer;
     text-align: left;
@@ -338,20 +324,21 @@ div.skills-tab {
     font-size: 15px;
     transition: 0.4s;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 /* Style the buttons inside the tab */
 div.skills-tab button {
     font-size: 5vw;
-    width: 15%;
-    height: 20vh;
+    width: 200px;
+    height: 200px;
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
     transition: 0.3s;
-    margin: 4% 5%;
+    margin: 0 auto;
     border: 1px solid #cc0000;
     background: rgba(255,255,255,0.9);
     color: #cc0000;
@@ -374,34 +361,30 @@ div.skills-tab button.active {
     border: 1px solid #cc0000;
 }
 
+#skillsText{
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* Style the tab content */
 .skills-content {
     color: white;
-    width: 80vw;
-    height: 47vh;
+    height: 400px;
     font-size: 1.3em;
     display: none;
-    padding: 6px 12px;
-    border: 4px solid #cc0000;
+    border: 4px groove #cc0000;
     border-radius: 10px;
-    margin: 0 10vw 1% 10vw;
-    margin-bottom: 4%;
-    background: rgba(0,0,0,0.4);
+    margin-top: 150px;
+    padding: 20px;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    text-align: center;
 }
 
 .skills-content h1{
     text-decoration: none;
     text-align: center;
     margin-bottom: 5%;
-}
-
-.skills-content p{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.skills-content div{
-    width: 100%;
 }
 
 .skills-content {
@@ -513,10 +496,8 @@ div.panel {
     color: black;
     display: block;
     margin: 0;
-    color: #717f86;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
 }
 
 
@@ -608,11 +589,23 @@ a.filter {
     font-size: 1.2em;
 }
 
+.proj-img-large{
+    border: 2px solid black;
+    width: 80%;
+    margin: 10% auto;
+}
+
+.proj-descript{
+    width: 100%;
+    font-size: 18px;
+}
+
 #project-1{
-    background: url("/img/project-3-bg.jpg");
+    background: url("/img/project-1-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 0;
+    background-position: -300px 0px;
 }
 
 #project-2{
@@ -630,10 +623,19 @@ a.filter {
     background-position: center 0;
 }
 
+.proj-btn{
+    background: white;
+    border: 2px solid #CC0000;
+    border-radius: 4px;
+    margin: 20px;
+    font-size: 20px;
+}
+
+
 .clearfix{
     justify-content: center;
     color: #cc0000;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border: 1px solid #cc0000;
@@ -650,7 +652,7 @@ a.filter {
     width: 80%;
     height: 20%;
     margin: 90% auto 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
     color: #cc0000;
     border: 1px solid #cc0000;
     font-size: 1em;
@@ -693,6 +695,15 @@ a.filter {
 }
 
 .modal-content:focus {
+}
+
+.modal-content a,
+.modal-content a:visited{
+    color: black;
+}
+
+.modal-body{
+    display: flex;
 }
 
 /* The Close Button */
@@ -938,8 +949,7 @@ FOOTER
 }
 
 .footer .footer-top {
-    padding-top: 9rem;
-    padding-bottom: 5rem;
+    padding: 50px 0;
 }
 
 .footer .widget-title, .footer .widget-title a {
@@ -950,7 +960,6 @@ FOOTER
 }
 
 .footer .widget-title{
-    padding-bottom: 20px;
     font-family: 'Shadows Into Light', sans-serif;
     font-size: 44px;
     color: #cc0000;
@@ -966,6 +975,26 @@ FOOTER
 .footer .navigation, .footer .social-list {
     float: none;
     margin-bottom: 20px;
+}
+
+.media-logo{
+    margin: 20px 30px;
+}
+
+#linkedIn{
+    border: 1px solid white;
+    font-size: 30px;
+    background: #0077B5;
+    width: 45px;
+    
+    display: inline-block;
+}
+
+#gitHub{
+    border: 1px solid white;
+    font-size: 30px;
+    width: 45px;
+    display: inline-block;
 }
 
 .list-horizontal li {
@@ -989,23 +1018,32 @@ MEDIA QUERIES
 -------------------*/
 
 @media (min-width: 980px) and (max-width: 1400px){
-    div.skills-tab button {
-        height: 15vh
-    }
 
     .project-btn button{
         font-size: 1.6em;
     }
 
-    .skills-content{
-        font-size: 1.7em;
+    div.skills-tab{
+        margin: 150px auto;;
     }
 
+    div.skills-tab button{
+        height: 150px;
+        width: 150px;
+    }
+
+    .skills-content{
+        font-size: 2em;
+    }
 
     #my-pic{
-        height: 65%;
         width: 80%;
-        left: 15%;
+        margin: 40% 0 0 20%;
+    }
+
+    #picture-content{
+        width: 70%;
+        margin: 0;
     }
 }
 
@@ -1026,7 +1064,7 @@ MEDIA QUERIES
     #picture-content{
         font-size: 3vmin;
         width: 75%;
-        margin-right: 10%;
+        margin: 0 auto;
     }
 
     #image-of-me{
@@ -1052,7 +1090,7 @@ MEDIA QUERIES
     div.skills-tab {
         margin: 5% auto;
         width: 80%;
-        height: auto;
+        height: 200px;
     }
 
     div.skills-tab button {
@@ -1106,6 +1144,7 @@ MEDIA QUERIES
     #about-picture{
         display: inline-block;
         height: 100%;
+        margin-top: 50px;
     }
 
     #image-of-me{
@@ -1115,7 +1154,6 @@ MEDIA QUERIES
     }
 
     #my-pic{
-        height: 100%;
         width: 40%;
         margin: 0 30%;
         left: 0;
@@ -1125,7 +1163,7 @@ MEDIA QUERIES
         width: 70%;
         margin: 5% 15%;
         height: 40%;
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     .details-text {
@@ -1145,11 +1183,8 @@ MEDIA QUERIES
         height: 10vh;
     }
 
-    .skills-content{
-        margin-top: 0;
-        -webkit-align-items: start;
-        min-width: 40%;
-        font-size: 1.1em;
+    #skillsText{
+        width: 80%;
     }
 
     button.accordion {
@@ -1171,6 +1206,15 @@ MEDIA QUERIES
 
     .project-btn button{
         font-size: 1em;
+    }
+
+    .modal-body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .proj-img-large{
+        width: 40%;
     }
 
     #contact{
@@ -1202,11 +1246,12 @@ MEDIA QUERIES
     #about-picture{
         display: inline-block;
         min-height: 100%;
+        margin-top: 50px;
     }
 
     #image-of-me{
-        height: 60%;
         width: 100%;
+        height: 60%;
         margin: 0;
         top: 0;
     }
@@ -1220,16 +1265,15 @@ MEDIA QUERIES
     }
 
     #picture-content{
-        height: 30%;
         width: 80%;
         margin: 0 10%;
         font-size: 1.3em;
     }
 
     #about-content{
-        height: 100%;
-        width: 100%;
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
     }
 
     .project-list {
@@ -1241,18 +1285,13 @@ MEDIA QUERIES
         border-bottom: 2px solid #A87F41;
     }
 
-    .skills-content{
-        -webkit-align-items: start;
-        min-width: 80%;
-    }
-
     div.skills-tab{
-        float: left;
-        height: auto;
+        height: 100%;
         width: 20%;
         padding: 0;
         margin: 0;
         margin-top: 20%;
+        flex-direction: column;
     }
 
     div.skills-tab button{
@@ -1265,21 +1304,23 @@ MEDIA QUERIES
         border-radius: 0;
     }
 
-
-    .skills-content{
-        font-size: 1.2em;
-        float: left;
-        border: 1px solid #cc0000;
+    #skillsText{
         width: 80%;
-        min-height: 290px;
         margin: 0;
         margin-top: 20%;
+    }
+
+    .skills-content{
+        font-size: 1em;
+        border: 1px solid #cc0000;
+        width: 100%;
+        margin: 0;
         border-radius: 0;
         animation-direction: alternate-reverse;
     }
 
     .header-h {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .header-p, body{
@@ -1323,5 +1364,14 @@ MEDIA QUERIES
 
     .sidenav a {
         font-size: 18px;
+    }
+
+    .modal-body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .proj-btn{
+        font-size: 1.5em;
     }
 }

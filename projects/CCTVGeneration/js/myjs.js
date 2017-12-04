@@ -109,11 +109,43 @@ function storeCart(basket) {
         url:submitTo,
         type: "POST",
         data: req,
-        cache: false
-    }).done(function(){
-
-    }).fail(function(jqXHR, textStatus, errorThrown) {
-        alert("The Cart has not saved successfully. Failed: " + textStatus + " " + jqXHR.status);
+        cache: false,
+        success: function(){
+            if($('body').is('.shopping')){
+                alert("Item added to your cart!");
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert("The Cart has not saved successfully. Failed: " + textStatus + " " + jqXHR.status);
+        }
     });
-};
+}
 
+//Fetching the cart
+
+/*var cartItems = [];*///defaults as an empty list
+
+function fetchCart() {
+    var submitTo = "http://davidjosephmills.co.uk/projects/CCTVGeneration/php/fetchbask.php";
+
+    var req = {};
+
+    $.ajax({
+        url:submitTo,
+        type: "POST",
+        data: req,
+        cache: false,
+        success: function(data){
+            if (data != ""){
+            cartItems = JSON.parse(data);
+            } else {
+                cartItems = [];
+            }
+            //LOAD THE CART IN HTML
+            displayCart(); //Display cart items on cart.html
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert("The Cart has not been fetched. Failed: " + textStatus + " " + jqXHR.status);
+        }
+    });
+}

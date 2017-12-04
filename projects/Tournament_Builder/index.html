@@ -8,10 +8,12 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>1v1 Tournament Builder</title>
+        <title>1 v 1 Tournament Builder</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <!-----------------IMPORT STYLE SHEETS----------------->
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Chewy|Iceland" rel="stylesheet">
         <!--CSS Reset Normalizer-->
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <!--MY CSS-->
@@ -20,14 +22,17 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
 
     <body>
         <h1>1V1 TOURNAMENT BUILDER</h1>
-        <h3>Your handy 16 person bracket generator with responsive updating!</h3>
+        <h3>Your handy 16 person bracket generator with user input updating!</h3>
 
 
-        <p>Is your tournament seeded?</p>
-        <form>
+        <div id="seedingBtns">
+            <p>Is your tournament seeded?</p>
             <input class="radioBtn" id="seedYes" type="radio" name="seeding"> Yes
             <input class="radioBtn" id="seedNo" type="radio" name="seeding"> No
-        </form>
+        </div>
+        <div id="seedingText"></div>
+        
+        <div id="startingImg"><img src="images/trophies.png" alt="Picture of trophies"></div>
 
         <p id="radioText"></p>
         <div id="inputField">
@@ -55,50 +60,52 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
                 </form>
             </div>
         </div>
-        <button id="tourneyCreateBtn">Generate!</button>
-        <button id="tourneyModifyBtn">Modify!</button>
+        <button id="tourneyCreateBtn" class="generate-btns">Generate!</button>
+        <button id="tourneyModifyBtn" class="generate-btns">Modify!</button>
+        <button id="tourneyResetBtn" class="generate-btns">Reset!</button>
 
         <div id="errorMessage"></div>
+        <div id="winnersMessage"></div>
 
 
         <div id=roundSelect>
-            <button class="round-select-btn">RO16</button><button class="round-select-btn">QF</button><button class="round-select-btn">SF</button><button class="round-select-btn">GF</button>
+            <button id="ro16Btn" class="round-select-btn">RO16</button><button id="ro8Btn" class="round-select-btn">QF</button><button id="ro4Btn" class="round-select-btn">SF</button><button id="ro2Btn" class="round-select-btn">Final</button>
         </div>
         <section id="bracket">
             <div id="ro16" class='tourney-round'>
                 <h2 class="round-header">RO16</h2>
                 <div class="round-matches">
                     <div class="vs-box">
-                        <div><button id="player1" class="player-box" onclick="Winner(1, this.innerHTML, this.id, 'player2')"></button></div>
-                        <div><button id="player2" class="player-box" onclick="Winner(1, this.innerHTML, this.id, 'player1')"></button></div>
+                        <div><button id="player1" name="rd1_1" class="player-box"></button></div>
+                        <div><button id="player2" name="rd1_2" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player3" class="player-box" onclick="Winner(2, this.innerHTML, this.id, 'player4')"></button></div>
-                        <div><button id="player4" class="player-box" onclick="Winner(2, this.innerHTML, this.id, 'player3')"></button></div>
+                        <div><button id="player3" name="rd1_3" class="player-box"></button></div>
+                        <div><button id="player4" name="rd1_4" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player5" class="player-box" onclick="Winner(3, this.innerHTML, this.id, 'player6')"></button></div>
-                        <div><button id="player6" class="player-box" onclick="Winner(3, this.innerHTML, this.id, 'player5')"></button></div>
+                        <div><button id="player5"  name="rd1_5"class="player-box"></button></div>
+                        <div><button id="player6"  name="rd1_6"class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player7" class="player-box" onclick="Winner(4, this.innerHTML, this.id, 'player8')"></button></div>
-                        <div><button id="player8" class="player-box" onclick="Winner(4, this.innerHTML, this.id, 'player7')"></button></div>
+                        <div><button id="player7" name="rd1_7" class="player-box"></button></div>
+                        <div><button id="player8" name="rd1_8" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player9" class="player-box" onclick="Winner(5, this.innerHTML, this.id, 'player10')"></button></div>
-                        <div><button id="player10" class="player-box" onclick="Winner(5, this.innerHTML, this.id, 'player9')"></button></div>
+                        <div><button id="player9" name="rd1_9" class="player-box"></button></div>
+                        <div><button id="player10" name="rd1_10" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player11" class="player-box" onclick="Winner(6, this.innerHTML, this.id, 'player12')"></button></div>
-                        <div><button id="player12" class="player-box" onclick="Winner(6, this.innerHTML, this.id, 'player11')"></button></div>
+                        <div><button id="player11" name="rd1_11" class="player-box"></button></div>
+                        <div><button id="player12" name="rd1_12" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player13" class="player-box" onclick="Winner(7, this.innerHTML, this.id, 'player14')"></button></div>
-                        <div><button id="player14" class="player-box" onclick="Winner(7, this.innerHTML, this.id, 'player13')"></button></div>
+                        <div><button id="player13" name="rd1_13" class="player-box"></button></div>
+                        <div><button id="player14" name="rd1_14" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="player15" class="player-box" onclick="Winner(8, this.innerHTML, this.id, 'player16')"></button></div>
-                        <div><button id="player16" class="player-box" onclick="Winner(8, this.innerHTML, this.id, 'player15')"></button></div>
+                        <div><button id="player15" name="rd1_15" class="player-box"></button></div>
+                        <div><button id="player16" name="rd1_16" class="player-box"></button></div>
                     </div>
                 </div>
             </div>
@@ -106,20 +113,20 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
                 <h2 class="round-header">Quarter Finals</h2>
                 <div class="round-matches">
                     <div class="vs-box">
-                        <div><button id="qf1" class="player-box" onclick="Winner(9, this.innerHTML, this.id, 'qf2')"></button></div>
-                        <div><button id="qf2" class="player-box" onclick="Winner(9, this.innerHTML, this.id, 'qf1')"></button></div>
+                        <div><button id="qf1" name="rd2_1" class="player-box"></button></div>
+                        <div><button id="qf2" name="rd2_2" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="qf3" class="player-box" onclick="Winner(10, this.innerHTML, this.id, 'qf4')"></button></div>
-                        <div><button id="qf4" class="player-box" onclick="Winner(10, this.innerHTML, this.id, 'qf3')"></button></div>
+                        <div><button id="qf3" name="rd2_3" class="player-box"></button></div>
+                        <div><button id="qf4" name="rd2_4" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="qf5" class="player-box" onclick="Winner(11, this.innerHTML, this.id, 'qf6')"></button></div>
-                        <div><button id="qf6" class="player-box" onclick="Winner(11, this.innerHTML, this.id, 'qf5')"></button></div>
+                        <div><button id="qf5" name="rd2_5" class="player-box"></button></div>
+                        <div><button id="qf6" name="rd2_6" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="qf7" class="player-box" onclick="Winner(12, this.innerHTML, this.id, 'qf8')"></button></div>
-                        <div><button id="qf8" class="player-box " onclick="Winner(12, this.innerHTML, this.id, 'qf7')"></button></div>
+                        <div><button id="qf7" name="rd2_7" class="player-box"></button></div>
+                        <div><button id="qf8" name="rd2_8" class="player-box"></button></div>
                     </div>
                 </div>
             </div>
@@ -127,12 +134,12 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
                 <h2 class="round-header">Semi Finals</h2>
                 <div class="round-matches">
                     <div class="vs-box">
-                        <div><button id="sf1" class="player-box" onclick="Winner(13, this.innerHTML, this.id, 'sf2')"></button></div>
-                        <div><button id="sf2" class="player-box" onclick="Winner(13, this.innerHTML, this.id, 'sf1')"></button></div>
+                        <div><button id="sf1" name="rd3_1" class="player-box"></button></div>
+                        <div><button id="sf2" name="rd3_2" class="player-box"></button></div>
                     </div>
                     <div class="vs-box">
-                        <div><button id="sf3" class="player-box" onclick="Winner(14, this.innerHTML, this.id, 'sf4')"></button></div>
-                        <div><button id="sf4" class="player-box" onclick="Winner(14, this.innerHTML, this.id, 'sf3')"></button></div>
+                        <div><button id="sf3" name="rd3_3" class="player-box"></button></div>
+                        <div><button id="sf4" name="rd3_4" class="player-box"></button></div>
                     </div>
                 </div>
             </div>
@@ -140,8 +147,8 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
                 <h2 class="round-header">GRAND FINALS</h2>
                 <div class="round-matches">
                     <div class="vs-box">
-                        <div><button id="finalist1" class="player-box" onclick="Winner(15, this.innerHTML, this.id, 'finalist2')"></button></div>
-                        <div><button id="finalist2" class="player-box" onclick="Winner(15, this.innerHTML, this.id, 'finalist1')"></button></div>
+                        <div><button id="finalist1" name="rd4_1" class="player-box"></button></div>
+                        <div><button id="finalist2" name="rd4_2" class="player-box"></button></div>
                     </div>
                 </div>
             </div>

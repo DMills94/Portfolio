@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+
+<head>
+    <title>osu!Recent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-----------------IMPORT STYLE SHEETS----------------->
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!--CSS Reset Normalizer-->
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <!--My CSS-->
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+
+    <!-----------------IMPORT ANGULAR JS----------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+
+<body id="background">
+    <section id="search">
+        <div id="logo">
+            <img id="logoImg" src="images/osuRecentLogo320x320.png">
+        </div>
+
+
+
+        <!--Angular JS-->
+        <div ng-app="osuReplayViewer">
+            <div ng-controller="MainController" id="searchBox">
+
+
+                <!--Username Input--><h1>STILL IN DEVELOPMENT</h1>
+                <input id="username" type="text" ng-model="username" placeholder="Enter Your Username" autofocus><br>
+                <a href="#results"><input id="searchUser" type="submit" value="View Replays" ng-click="search(username)"></a>
+
+                <h1 ng-show="user">10 Recent Plays</h1>
+                <!--Replay Information-->
+                <div ng-show="user" id="results" ng-include="'userrecents.html'"> </div>
+
+                <!--Info on osu!Recent-->
+                <div ng-hide="user" id="info">
+                    <h1>How does osu! Recent work?</h1>
+                    <ul>
+                        <li>Enter your osu! username above to get started!</li>
+                        <li>Hit "View Replays"</li>
+                        <li>Your 10 most recent replays within the last 24 hours will be displayed!</li><br>
+                        Note: This includes ALL plays, including fails/restarts<br>
+                        Note: Any plays made over 24 hours ago will not be displayed
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+    <script src="js/js.js" type="text/javascript"></script>
+</body>

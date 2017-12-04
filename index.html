@@ -22,14 +22,19 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
         <link href="css/hover-min.css" rel="stylesheet">
 
-
         <!-- MY STYLE SHEET -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!--Fake Loader-->
+        <link rel="stylesheet" href="css/fakeLoader.css">
 
     </head>
 
 
     <body>
+
+        <!--Fake Loader-->
+        <div id="fakeLoader"></div>
 
         <!----------------------
 HOMEPAGE AND NAV BAR
@@ -118,7 +123,7 @@ SKILLS SECTION
                         <button class="tablinks wow flipInX" data-wow-delay="1.2s" data-wow-duration="1.3s" onclick="openSkill(event, 'skills')"><icon class="skills-icons fa fa-html5"></icon></button>
                         <button class="tablinks wow flipInX" data-wow-delay="1.6s" data-wow-duration="0.9s" onclick="openSkill(event, 'teamwork')"><icon class="skills-icons fa fa-address-book-o"></icon></button>
                     </div>
-                    <div class="wow fadeInLeft" data-wow-delay="2s">
+                    <div id="skillsText" class="wow fadeInLeft" data-wow-delay="2s">
                         <div id="communication" class="skills-content">
                             <h1 class="header-h">Communication</h1>
                             <p>Communciation is an essential skill in any industry. I have experience from working within hospitality which has greatly increased my ability to communicate with and listen to the consumer and guarentee they receive the end product they are asking for.</p>
@@ -224,7 +229,8 @@ PROJECT SECTION
                             <li class="wow fadeInLeftBig" data-wow-delay="0.6s" data-wow-duration="1.2s"><a class="filter" data-filter=".category-1">HTML5</a></li>
                             <li class="wow fadeInLeftBig" data-wow-delay="0.7s" data-wow-duration="1.3s"><a class="filter" data-filter=".category-2">CSS3</a></li>
                             <li class="wow fadeInLeftBig" data-wow-delay="0.8s" data-wow-duration="1.4s"><a class="filter" data-filter=".category-3">JavaScript</a></li>
-                            <li class="wow fadeInLeftBig" data-wow-delay="0.9s" data-wow-duration="1.5s"><a class="filter" data-filter=".category-4">API</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="0.9s" data-wow-duration="1.5s"><a class="filter" data-filter=".category-4">Angular</a></li>
+                            <li class="wow fadeInLeftBig" data-wow-delay="1s" data-wow-duration="1.6s"><a class="filter" data-filter=".category-5">API</a></li>
                         </ul>
                     </div>
 
@@ -237,7 +243,7 @@ PROJECT SECTION
                             <div class="clearfix">
                                 <h1>PROJECT 1</h1>
                                 <div style="left: 166px; right: 44px;" class="project-line"></div>
-                                <div class="project-info">Basic Application</div>
+                                <div class="project-info">Tournament Builder</div>
                             </div>
                             <div class="wrapper">
                                 <div class="project-btn">
@@ -257,15 +263,15 @@ PROJECT SECTION
                                         <h1 class=" header-h modal-title">PROJECT 1</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="proj-img-large">
-                                            <img src="" alt="Project 1 Larger Preview">
-                                        </div>
                                         <div>
-                                            <p>Description of Project 1</p>
+                                            <img class="proj-img-large" src="img/project-1-prev.png" alt="Project 1 Larger Preview">
                                         </div>
-                                        <a target="_blank" href="https://google.co.uk"><button type="button" class="proj-btn">Live Project!</button></a>
-                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                        <div class="proj-descript">
+                                            <p>Ever been accused of setting up a tournament that's rigged? Look no further! This basic webpage can take your 16 teams and automatically produce a user interactive 1v1 tournament bracket!<br><br>Skills used: HTML5, CSS3 and JavaScript.</p>
+                                        </div>
                                     </div>
+                                    <a target="_blank" href="/projects/Tournament_Builder"><button type="button" class="proj-btn">Live Project!</button></a>
+                                    <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
@@ -300,15 +306,15 @@ PROJECT SECTION
                                         <h1 class=" header-h modal-title">PROJECT 2</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="proj-img-large">
-                                            <img src="" alt="Project 2 Larger Preview">
-                                        </div>
                                         <div>
-                                            <p>Description of Project 2</p>
+                                            <img class="proj-img-large" src="/img/project-2-prev.png" alt="Project 2 Larger Preview">
                                         </div>
-                                        <a target="_blank" href="/projects/CCTVGeneration/"><button type="button" class="proj-btn">Live Project!</button></a>
-                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                        <div class="proj-descript">
+                                            <p>For all your fashion needs, CCTV Generation presents it's latest designs available for browsing and purchase on their newly released website available on mobile and desktop!<br><br>Skills used: HTML5, CSS3, JavaScript/JQuery, JSON, PHP, MariaDB</p>
+                                        </div>
                                     </div>
+                                    <a target="_blank" href="/projects/CCTVGeneration/"><button type="button" class="proj-btn">Live Project!</button></a>
+                                    <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
@@ -319,11 +325,11 @@ PROJECT SECTION
                         <!----------------------
 -------------------PROJECT 3
 ----------------------------------------------->
-                        <div class="mix category-1 category-2 category-4 project-item text-center" id="project-3" data-myorder="2">
+                        <div class="mix category-1 category-2 category-3 category-4 category-5 project-item text-center" id="project-3" data-myorder="2">
                             <div class="clearfix">
                                 <h1>PROJECT 3</h1>
                                 <div style="left: 166px; right: 44px;" class="project-line"></div>
-                                <div class="project-info">osu! API tracker</div>
+                                <div class="project-info">osu!Recent</div>
                             </div>
                             <div class="wrapper">
                                 <div class="project-btn">
@@ -342,15 +348,15 @@ PROJECT SECTION
                                         <h1 class=" header-h modal-title">PROJECT 3</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="proj-img-large">
-                                            <img src="" alt="Project 3 Larger Preview">
-                                        </div>
                                         <div>
-                                            <p>Description of Project 3</p>
+                                            <img class="proj-img-large" src="/img/project-3-prev.png" alt="Project 3 Larger Preview">
                                         </div>
-                                        <a target="_blank" href="https://google.co.uk"><button type="button" class="proj-btn">Live Project!</button></a>
-                                        <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
+                                        <div class="proj-descript">
+                                            <p>osu! is a free to play rhythm game where the player must move their cursor to click, or tap on the keyboard, on circles, sliders and spinners in time to music.<br>osu!Recent provides a history for players to view their most recent performances.<br><br>Skills used: HTML5, CSS3, JavaScript, AJAX, JQuery</p>
+                                        </div>
                                     </div>
+                                    <a target="_blank" href="/projects/osuRecent"><button type="button" class="proj-btn">Live Project!</button></a>
+                                    <a target="_blank" href="https://github.com/DMills94/Portfolio"><button type="button" class="proj-btn">The Code!</button></a>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
@@ -456,6 +462,12 @@ FOOTER
                     <div class="col-md-offset-3 col-md-6 text-center">
                         <div class="widget">
                             <h4 class="widget-title">David Mills</h4>
+                            <div id="linkedIn" class="media-logo">
+                                <a href="www.linkedin.com/in/david-mills-102b1b153"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                            <div id="gitHub" class="media-logo">
+                                <a href="https://github.com/DMills94/Portfolio"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            </div>
                             <p class="copyright clear-float">
                                 &copy; All Rights Reserved</p>
                         </div>
@@ -472,17 +484,38 @@ FOOTER ENDS
         <!----------------------
 SCRIPT IMPORTS
 ------------------------------->
+        <!--JQuery/Mix It Up-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+
+        <!--Fake Loader-->
+        <script src="js/fakeLoader.min.js"></script>
+        <script type="text/javascript">
+            //Fake Loader Options
+            $("#fakeLoader").fakeLoader({
+                timeToHide:600,
+                bgColor:"#000",
+                spinner:"spinner5"
+            });
+        </script>
+
+        <!--WOW JS for animations-->
         <script src="js/wow.min.js"></script>
         <script>
             new WOW().init();
         </script>
+
+        <!--Type Writer-->
         <script src="js/typewriter.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/jquery.mixitup.min.js"></script>
+
+
+        <!--BootStrap-->
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/custom.js"></script>
         <script src="/js/jqBootstrapValidation.js"></script>
+
+        <!--My JS-->
+        <script src="js/custom.js"></script>
         <script src="./js/contact_me.js"></script>
 
 

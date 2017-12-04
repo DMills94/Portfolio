@@ -3,7 +3,10 @@ JAVASCRIPT FOR SHOP.HTML
 ========================================================================*/
 
 //Global Cart
-var cartItems = []
+var cartItems = [];
+
+
+fetchCart();
 
 //Global Count Variable (used in template)
 count2 = 1;
@@ -24,7 +27,8 @@ var Products = [
         types: ["T-Shirt", "Snapback", "Hoodie"],
         sizes: ["Small", "Medium", "Large", "X-Large", "XX-Large"],
         colours: ["White", "Black", "Blue"],
-        price: 14.99},
+        price: 14.99
+    },
 
     {
         productNumber: 2,
@@ -40,7 +44,42 @@ var Products = [
         types: ["T-Shirt", "Hoodie"],
         sizes: ["Small", "Medium", "Large", "X-Large", "XX-Large"],
         colours: ["White", "Black", "Blue"],
-        price: 12.99}
+        price: 12.99
+    },
+
+    {
+        productNumber: 3,
+        counter1: function() {
+            return count1++;
+        },
+        counter2: function() {
+            return count2++;
+        },
+        design: "CCTV_GEN_text.png",
+        descript: "CCTV Generation Text",
+        images: ["Stag_tshirt_front_white.png", "Stag_tshirt_back_white.png"],
+        types: ["T-Shirt", "Hoodie"],
+        sizes: ["Small", "Medium", "Large", "X-Large", "XX-Large"],
+        colours: ["White", "Black", "Blue"],
+        price: 13.99
+    },
+
+    {
+        productNumber: 4,
+        counter1: function() {
+            return count1++;
+        },
+        counter2: function() {
+            return count2++;
+        },
+        design: "circle_neat.png",
+        descript: "CCTV Generation Logo",
+        images: ["Stag_tshirt_front_white.png", "Stag_tshirt_back_white.png"],
+        types: ["T-Shirt", "Hoodie"],
+        sizes: ["Small", "Medium", "Large", "X-Large", "XX-Large"],
+        colours: ["White", "Black", "Blue"],
+        price: 13.49
+    }
 ]
 
 
@@ -147,22 +186,19 @@ function addProducts(){
 addProducts(); //Add products to shop.html
 
 //Event Listeners for opening Product Shops
-var prod1btn = document.getElementById("product1Prev");
-prod1btn.addEventListener('click', function(){productInfo(1)}, false);
-var prod2btn = document.getElementById("product2Prev");
-prod2btn.addEventListener('click', function(){productInfo(2)}, false);
-/*var prod3btn = document.getElementById("product3");
-prod1btn.addEventListener('click', productInfo(3), false);
-var prod4btn = document.getElementById("product4");
-prod1btn.addEventListener('click', productInfo(4), false);*/
+var shopItemList = document.getElementsByClassName("productDesign");
+for (i = 0; i < shopItemList.length; i++){
+    shopItemList[i].addEventListener('click', productInfo, false);
+}
 
 //Display Product Shops/Hide open Shops
-function productInfo(productNumber){
+function productInfo(){
+    var idNum = this.id.replace( /\D+/g, '');
     for (var i = 1; i <= Products.length; i++){
-        document.getElementById("product" + i + "Shop").style.display = i == productNumber?"block": "none";
-        document.getElementById("product" + i + "Prev").style.display = i == productNumber?"none": "block";
+        document.getElementById("product" + i + "Shop").style.display = i == idNum?"block": "none";
+        document.getElementById("product" + i + "Prev").style.display = i == idNum?"none": "block";
     }
-    document.getElementById("product"+productNumber+"Slide1").style.display = "block";
+    document.getElementById("product"+idNum+"Slide1").style.display = "block";
 }
 
 //Image Previewer
@@ -197,7 +233,7 @@ function addToCart(product){
         size: document.getElementById("prod1Size").value,
         colour: document.getElementById("prod1Colour").value,
         quantity: 1,
-        price: Products[product].price,
+        price: Products[product].price
     }
 
     var found = false;

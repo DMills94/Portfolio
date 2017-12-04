@@ -1,18 +1,6 @@
-<!--=======================================================================
-LANDING PAGE FOR THE WEBSITE CCTV GENERATION, A FASHION WEBSITE SELLING
-UNIQUE AND CREATIVE T-SHIRT DESIGNS.
-
-HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
-========================================================================-->
-
-
-
-
 <!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <title>CCTV Generation</title>
+<html lang="en"><head>
+        <title>Shop - CCTV Generation Shop</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <!-----------------IMPORT STYLE SHEETS----------------->
@@ -20,85 +8,58 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         <!--GOOGLE FONTS-->
         <link href="https://fonts.googleapis.com/css?family=Allan|Covered+By+Your+Grace|Rock+Salt|Sedgwick+Ave|Sedgwick+Ave+Display" rel="stylesheet">
-        <!--Favicon-->
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <!--CSS Reset Normalizer-->
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <!--MY CSS-->
         <link href="css/mycss.css" rel="stylesheet" type="text/css">
-    </head>
+    <style></style></head>
 
     <body>
-        <!-----------------LANDING PAGE----------------->
-
-        <section id="home" class="homeBgImage">
+        <section id="shoppingCart">
             <div class="banner-text">
                 <a href="index.html"><img id="homeLogo" src="images/bannertext.png" alt="CCTV Generation"></a>
             </div>
 
             <header>
                 <div class="logoC">
-                    <a href="index.html"><img src="images/circle_neat_croped_filled.png" alt="The company logo" /></a>
+                    <a href="index.html"><img src="images/circle_neat_croped_filled.png" alt="The company logo"></a>
                 </div>
                 <div class="basketIcon">
                     <a href="cart.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
                 </div>
                 <!---------------NAVIGATION----------------->
                 <div class="navC">
-                    <span class="navBtn">&#9776;</span>
+                    <span class="navBtn">☰</span>
                     <nav>
                         <ul id="webMenu" class="menu-items">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="shop.html">Shop</a></li>
-                            <!--                            <li><a href="design.html">Design</a></li>-->
+                            <li><a href="design.html">Design</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li class="view-basket"><a href="cart.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Basket</a></li>
+                            <li class="view-basket"><a href="cart.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Your Basket</a></li>
                         </ul>
                     </nav>
                 </div>
                 <!---------------NAVIGATION ENDS----------------->
             </header>
-
-            <!------------------NEWS SECTION------------------->
-            <!--            <div class="news-home">News</div>
-<div class="slideshow-container">
-<div class="mySlides fade">
-<div class="numbertext">1 / 3</div>
-<img src="/images/circle_neat.png" style="width:100%" alt="News Item 1">
-<div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides fade">
-<div class="numbertext">2 / 3</div>
-<img src="/images/Minator_emblem_filled_white.png" style="width:100%" alt="News Item 2">
-<div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-<div class="numbertext">3 / 3</div>
-<a href="shop.html"><img src="/images/Minator_with_border_filled_white_white_bg.png" style="width:100%" alt="News Item 3"></a>
-<div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<div style="text-align:center">
-<span class="dot" onclick="currentSlide(1)"></span> 
-<span class="dot" onclick="currentSlide(2)"></span> 
-<span class="dot" onclick="currentSlide(3)"></span> 
-</div>-->
-            <!----------------NEWS SECTION ENDS------------------>
         </section>
+
+
+        <!---------------CART SECTION----------------->
+
+        <h1>YOUR CART</h1>
+
+        <section id="displayCart">
+
+        <div class="cart-item" id="cartItem0"><div class="pic-preview"><img src="images/Minator.png"></div><div class="design-text">CCTV Generation Minator</div><div class="cart-product-details">T-Shirt<br>Small<br>White</div><div class="cart-quantity"><input class="quantities" id="quantProduct0" value="2" min="0" type="number"></div><div class="cart-price">£29.98</div></div><div class="cart-item" id="cartItem1"><div class="pic-preview"><img src="images/Stag.png"></div><div class="design-text">CCTV Generation Stag with Text</div><div class="cart-product-details">T-Shirt<br>Small<br>White</div><div class="cart-quantity"><input class="quantities" id="quantProduct1" value="6" min="0" type="number"></div><div class="cart-price">£77.94</div></div><div id="totalCost"><p>Total: £107.92</p></div><button id="checkoutCart">Checkout</button></section>
+        <!---------------CART SECTION ENDS----------------->
+
 
         <!------------------FOOTER---------------->
         <footer>
             <div id="copyright">
-                CCTV Generation &copy;2017
+                CCTV Generation ©2017
             </div>
             <div class="social-media">
                 <div>
@@ -113,19 +74,15 @@ HAND CODED WEBSITE/DESIGN BY: DAVID MILLS
             </div>
         </footer>
 
-
-
         <!----------------IMPORT SCRIPTS------------------>
-        <script
-                src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
         <!--MUSTACHE JS-->
         <script src="js/mustache.min.js"></script>
         <!--CUSTOM JS-->
         <script src="js/myjs.js"></script>
-    </body>
+        <!--CART JS-->
+        <script src="js/cart.js" type="text/javascript"></script>
+    
 
-
-</html>
+</body></html>
